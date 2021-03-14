@@ -5,8 +5,7 @@ describe('First WebdriverIO autotest for Today', () => {
     it('Load Example Website', () => {
         browser.maximizeWindow()
         browser.url('http://example.com/');
-        browser.pause(med1500); //можно сделать урл константой и использовать неявное ожидание
-        //но нужно ли тогда ожидание? я же использую его чтобы успеть заметить что открылось в браузере
+        browser.pause(med1500); 
         expect(browser).toHaveUrl('http://example.com/');
         expect(browser).toHaveTitle('Example Domain');
     })
@@ -42,14 +41,14 @@ describe('First WebdriverIO autotest for Today', () => {
         const button = $('#submit-button')
         button.waitForExist()
         expect(button).toHaveAttrContaining('type', 'submit')
-      //  browser.pause(s500);
+    
     })
 
     it('Assert Value', () => {
         const button = $('#populate')
         button.waitForExist()
         expect(button).toHaveValue('Populate')
-      //  browser.pause(500);
+     
     })
 
     it('Save Screenshot', () => {
